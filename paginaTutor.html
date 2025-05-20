@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+<link rel="stylesheet" href="stileAPI.css">
+    <title>Form con GET</title>
+</head>
+<body>
+
+<div id="saluto">PAGINA TUTOR!</div>
+
+<form action="phprova.php" method="GET" style="width:300px">
+    <!-- Input nascosti per nome e cognome -->
+    <input type="hidden" name="nome" id="nome">
+    <input type="hidden" name="cognome" id="cognome">
+	<input type="hidden" name="ruolo" id="ruolo">
+	<input type="hidden" name="CF" id="CF">
+	
+
+    <p><strong>Che ripetizioni puoi fare?</strong></p>
+    <label for="materia">Scegli la materia</label>
+    <select name="materia" id="materia" required>
+        <option value="Informatica">Informatica</option>
+        <option value="Tepsit">Tepsit</option>
+        <option value="Matematica">Matematica</option>
+        <option value="Storia">Storia</option>
+        <option value="Italiano">Italiano</option>
+    </select><br><br><br>
+    
+    <button type="submit">Invia</button>
+</form>
+
+<script>
+    // Ottieni i parametri dall'URL
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get("nome");
+    const cognome = params.get("cognome");
+	const ruolo = params.get("ruolo");
+	const CF = params.get("CF");
+
+    // Inserisci i valori negli input nascosti
+    if (nome) {
+        document.getElementById("nome").value = nome;
+        document.getElementById("cognome").value = cognome;
+		document.getElementById("ruolo").value = ruolo;
+		document.getElementById("CF").value = CF;
+        document.getElementById("saluto").textContent = "Benvenuto, " + nome + " " + (cognome || "") + "!";
+    }
+</script>
+
+</body>
+</html>

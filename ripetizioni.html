@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<title>tepsit</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+<link rel="stylesheet" href="stileAPI.css">
+ 
+
+</head>
+<body>
+<h1>ITIS G.Marconi</h1>
+<main>
+
+<form action="repquery.php" method="GET" style="width:300px">
+<fieldset style="border-left-width: 3px;padding-left: 10px;">
+
+<legend>Inserire i dati</legend>
+
+<label for="nome">Nome studente</label>
+<input type="text" name="nome" id="nome" maxlength="30" placeholder="Mario" required><br>
+
+<label for="cognome">Cognome Studente</label>
+<input type="text" name="cognome" id="cognome" maxlength="30" placeholder="Rossi" required><br>
+
+<label for="codice_fiscale">Codice Fiscale</label>
+<input type="text" name="codice_fiscale" id="codice_fiscale" maxlength="16" minlength="16" placeholder="RSSMRA00A01H501U" required><br>
+
+<label for="class">Inserisci Classe</label>
+<input type="number" name="class" id="class" min="1" max="5" maxlength="6" placeholder="5" required><br>
+
+<label for="sezione">Inserisci Sezione</label>
+<input type="text" name="sezione" id="sezione" maxlength="6" placeholder="C" required><br>
+
+<label for="indirizzo">Inserisci Indirizzo</label>
+<select name="indirizzo" id="indirizzo" required>
+    <option value="I">Informatica</option>
+    <option value="SA">Scienze Applicate</option>
+    <option value="EN">Energia</option>
+    <option value="GC">Grafica e Comunicazione</option>
+</select><br>
+
+<div class="font1">Disponibilità: </div>
+<label class="font1" for="tutor"><input type="radio" name="ruolo" id="tutor" value="1">Tutor</label><br>
+<label class="font1" for="stud"><input type="radio" name="ruolo" id="stud" value="0">Studente</label><br>
+
+<br>
+</fieldset>
+<button type="submit" name="invia">Invia</button>
+</form>
+
+</main>
+</body>
+</html>
